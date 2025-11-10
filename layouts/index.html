@@ -1,0 +1,24 @@
+{{ define "main" }}
+  <h1>优秀开源软件收集站</h1>
+  <p>展示优秀的开源软件，包括基本信息和安装方式。</p>
+
+  <h2>随机推荐</h2>
+  {{ $random := shuffle .Site.Data.software }}
+  {{ range first 1 $random }}
+    <div class="software-card">
+      <h3><a href="/software/{{ .name | urlize }}">{{ .name }}</a></h3>
+      <p>{{ .description }}</p>
+      <span>⭐ {{ .stars }}</span>
+    </div>
+  {{ end }}
+
+  <h2>热门软件（按 Star 排序）</h2>
+  {{ $sorted := sort .Site.Data.software "stars" "desc" }}
+  {{ range first 3 $sorted }}
+    <div class="software-card">
+      <h3><a href="/software/{{ .name | urlize }}">{{ .name }}</a></h3>
+      <p>{{ .description }}</p>
+      <span>⭐ {{ .stars }}</span>
+    </div>
+  {{ end }}
+{{ end }}

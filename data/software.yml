@@ -1,0 +1,11 @@
+- name: "Hugo"
+  description: "Hugo is a fast and modern static site generator written in Go."
+  github: "https://github.com/gohugoio/hugo"
+  stars: 0
+  platforms:
+    - "All"
+  install:
+    - "Windows: Download installer from [Hugo releases](https://github.com/gohugoio/hugo/releases)"
+    - "macOS: `brew install hugo`"
+    - "Linux: `sudo apt install hugo`"
+  tags: ["static-site-generator", "go"]
