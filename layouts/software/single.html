@@ -4,5 +4,8 @@
   <p><strong>简介:</strong> {{ .Params.description }}</p>
 
 <hr />
+{{ end }}
 
+{{ range .Pages }}   <!-- 会把 install.md / usage.md 都列出来 -->
+  <a href="{{ .RelPermalink }}">{{ .Title }}</a>
 {{ end }}
