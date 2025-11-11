@@ -1,12 +1,8 @@
 {{ define "main" }}
   <h1>{{ .Title }}</h1>
-  <p><strong>GitHub:</strong> <a href="{{ .Params.github }}">{{ .Params.github }}</a></p>
+  <p><strong>GitHub:</strong> <a href="{{ .Params.repo }}">{{ .Params.repo }}</a></p>
   <p><strong>简介:</strong> {{ .Params.description }}</p>
 
-  <h2>安装方式</h2>
-  <ul>
-    {{ range .Params.install }}
-      <li>{{ . }}</li>
-    {{ end }}
-  </ul>
+<hr />
+
 {{ end }}
